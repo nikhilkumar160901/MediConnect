@@ -1,0 +1,26 @@
+const User = require("../models/user")
+
+
+const mainController = {
+
+
+    async loginApi (req, res) {
+        let email = req.body.email;
+        let password = req.body.password;
+        let role = req.body.role;
+
+        const result = await User.findOne({email:email});
+        if(!result){
+            res.json({message: "User not found"});
+        }else {
+            if(result?.password == password){
+                res.status(201).redirect("/patient-dashboard");
+            }else {
+                res.json({message: "Invalid Credentials"});
+            }
+        }
+    }
+};
+
+
+module.export = mainController

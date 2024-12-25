@@ -1,0 +1,344 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <title>Doctor Dashboard</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
+
+    <!-- Bootstap CDN -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+
+
+
+
+
+<link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#712cf9">
+
+<link rel="stylesheet" href="/css/doc.css">
+
+
+  </head>
+  <body>
+
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="/">DocOnline</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap">
+      <a class="nav-link px-3" href="/">Sign out</a>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3 sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" onclick="javascript:todayshowLinkButtonClick();" id="todayshowLink" href="#">
+              <span data-feather="home" class="align-text-bottom"></span>
+              Today Appointment
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="javascript:showLinkButtonClick();" id="showLink" href="#">
+              <span data-feather="file" class="align-text-bottom"></span>
+            Prescription Upload
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="javascript:allpatientshowLinkButtonClick();" id="allpatientshowLink" href="#">
+              <span data-feather="shopping-cart" class="align-text-bottom"></span>
+            All Patient
+            </a>
+          </li>
+
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
+          <span>History</span>
+          <a class="link-secondary" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle" class="align-text-bottom"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" onclick="javascript:previouspatientshowLinkButtonClick();" id="previouspatientshowLink" href="#">
+              <span data-feather="file-text" class="align-text-bottom"></span>
+              Previous Appointments
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+<div class="" id="Today-Appointment">
+
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Today Appointments</h1>
+  </div>
+
+  <div class="col-lg-8">
+       <div class="card mb-4">
+         <div class="card-body">
+           <div class="row">
+             <div class="col-sm-3">
+               <p class="mb-0">Full Name</p>
+             </div>
+             <div class="col-sm-9">
+               <p class="text-muted mb-0">Nikhil Kumar</p>
+             </div>
+           </div>
+           <hr>
+           <div class="row">
+             <div class="col-sm-3">
+               <p class="mb-0">Email</p>
+             </div>
+             <div class="col-sm-9">
+               <p class="text-muted mb-0">nk@gmail.com</p>
+             </div>
+           </div>
+           <hr>
+           <div class="row">
+             <div class="col-sm-3">
+               <p class="mb-0">Date</p>
+             </div>
+             <div class="col-sm-9">
+               <p class="text-muted mb-0">16/09/2022</p>
+             </div>
+           </div>
+           <hr>
+           <div class="row">
+             <div class="col-sm-3">
+               <p class="mb-0">Time</p>
+             </div>
+             <div class="col-sm-9">
+               <p class="text-muted mb-0">09:00AM</p>
+             </div>
+           </div>
+           <hr>
+           <div class="row">
+             <div class="col-sm-3">
+               <p class="mb-0">Age</p>
+             </div>
+             <div class="col-sm-9">
+               <p class="text-muted mb-0">21</p>
+             </div>
+           </div>
+           <hr>
+           <div class="row">
+             <div class="col-sm-3">
+               <p class="mb-0">Gender</p>
+             </div>
+             <div class="col-sm-9">
+               <p class="text-muted mb-0">Male</p>
+             </div>
+           </div>
+         </div>
+       </div>
+
+      <button id="accept-btn" class="accept-app btn btn-success btn-md" type="submit" name="button">Accept</button>
+      <button id="reject-btn"class="reject-app btn btn-danger btn-md" type="submit" name="button">Reject</button>
+
+      <button id="accepted-btn" class="accepted-app btn btn-success btn-md" type="text" name="button">Accepted</button>
+      <button id="rejected-btn"class="rejected-app btn btn-danger btn-md" type="text" name="button">Rejected</button>
+
+
+  </div>
+  <br>
+  <hr>
+  <br>
+</div>
+
+                        <!-- Prescription -->
+
+                    <div id="all-appointment" class="">
+
+
+                      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">All Visited Patient</h1>
+                      </div>
+
+                      <div class="card mb-4">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <p class="mb-0">Full Name</p>
+                            </div>
+                            <div class="col-sm-9">
+                              <p class="text-muted mb-0">Nikhil Kumar</p>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <p class="mb-0">Email</p>
+                            </div>
+                            <div class="col-sm-9">
+                              <p class="text-muted mb-0">example@example.com</p>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <p class="mb-0">Date</p>
+                            </div>
+                            <div class="col-sm-9">
+                              <p class="text-muted mb-0">16/09/2001</p>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <p class="mb-0">Time</p>
+                            </div>
+                            <div class="col-sm-9">
+                              <p class="text-muted mb-0">09:00AM</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                        <h4>Upload Prescription</h4>
+                      <form action="/doctor-dashboard" method="post">
+                        <input type="file" id="myFile" name="filename" required>
+                        <input type="submit">
+                      </form>
+
+                        <br>
+
+                      <h4>Suggest Next Appointment Date</h4>
+                      <form class="alertmsg" action="" method="post">
+
+                        <input type="date" name="suggestDate" value="date">
+                        <input class="alertmsg" type="submit" name="" value="Suggest">
+                      </form>
+
+                      <hr>
+
+                    </div>
+
+
+
+          <!-- All Patient -->
+
+            <div class="" id="All-patient">
+
+
+
+              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">All Patient</h1>
+              </div>
+
+            <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Name</th>
+                <th scope="col">E-Mail</th>
+                <th scope="col">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Nikhil</td>
+                <td>123@gmail.com</td>
+                <td>01/11/2022</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Praveen</td>
+                <td>321@gmail.com</td>
+                <td>01/11/2022</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+
+            </div>
+
+
+        <!-- Previous Appointment -->
+
+
+        <div class="" id="previous-patient">
+
+
+
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Previous Patient</h1>
+          </div>
+
+        <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Name</th>
+            <th scope="col">E-Mail</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Nikhil</td>
+            <td>123@gmail.com</td>
+            <td>01/11/2022</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Praveen</td>
+            <td>321@gmail.com</td>
+            <td>01/11/2022</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+        </div>
+
+
+    </main>
+  </div>
+</div>
+
+
+
+    <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+
+<!-- Jquerry -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<!-- javascript -->
+
+<script src="javascript/doctor.js" charset="utf-8"></script>
+
+  </body>
+</html>

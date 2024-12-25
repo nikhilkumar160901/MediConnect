@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>All Details</title>
+
+    <!-- Bootstap CDN -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+
+  </head>
+  <body>
+    <h1>All Data</h1>
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Age</th>
+      <th scope="col">Delete</th>
+      <!-- <th scope="col">Update</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <% for (let i=0; i<defaultStudent.length; i++){ %>
+
+    <tr>
+      <td><%= defaultStudent[i].name %> </td>
+      <td><%= defaultStudent[i].phone %> </td>
+      <td><%= defaultStudent[i].age %> </td>
+      <td>
+        <form class="" action="/delete" method="post">
+        <input type="checkbox" name="checkbox" value="<%= defaultStudent[i] %>"  onchange="this.form.submit()">
+        </form>
+      </td>
+      <!-- <td>
+        <form class="" action="/update" method="post">
+        <input type="checkbox" name="checkbox" value="<%= defaultStudent[i] %>"  onchange="this.form.submit()">
+        </form>
+      </td> -->
+    </tr>
+    <% }  %>
+  </tbody>
+</table>
+  </body>
+</html>
